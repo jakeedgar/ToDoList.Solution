@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using TodoList.Models;
 using System.Collections.Generic;
 
-namespace ToDoList.Controllers
+namespace TodoList.Controllers
 {
   public class ItemsController : Controller
   {
@@ -25,6 +25,13 @@ namespace ToDoList.Controllers
     {
       Item myItem = new Item(description);
       return RedirectToAction("Index");
+    }
+
+    [HttpPost("/items/delete")]
+    public ActionResult DeleteAll()
+    {
+      Item.ClearAll();
+      return View();
     }
 
   }
