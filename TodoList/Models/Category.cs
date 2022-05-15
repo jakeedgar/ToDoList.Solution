@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 
 namespace TodoList.Models
@@ -16,6 +17,7 @@ namespace TodoList.Models
       Id = _instances.Count;
       Items = new List<Item> { };
     }
+
     public static void ClearAll()
     {
       _instances.Clear();
@@ -35,5 +37,6 @@ namespace TodoList.Models
     {
       Items.Add(item);
     }
+
   }
 }
