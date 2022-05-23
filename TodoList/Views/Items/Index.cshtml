@@ -14,7 +14,8 @@
 
 @foreach (Item item in Model)
 {
-  <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId })</li>
+  <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId }) @Html.DisplayFor(Item => item.TaskComplete)</li>
 }
 
+<p>@Html.ActionLink("Back home", "Index", "Home")</p>
 <p>@Html.ActionLink("Add new item", "Create")</p>

@@ -53,6 +53,7 @@ namespace ToDoList.Controllers
     {
       var thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
       ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
+      ViewBag.TaskComplete = new List<SelectListItem>(){ new SelectListItem() { Text = "Yes", Value = "True" }, new SelectListItem() { Text = "No", Value = "False" }};
       return View(thisItem);
     }
 
@@ -108,5 +109,7 @@ namespace ToDoList.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+
   }
 }
